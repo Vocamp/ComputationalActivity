@@ -1,0 +1,290 @@
+<rdf:RDF xmlns="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://dase.cs.wright.edu/ontologies/computationalprocessingactivity">
+<owl:Ontology rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity">
+<owl:imports rdf:resource="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl"/>
+</owl:Ontology>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+<!--
+ http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent 
+-->
+<rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
+<cpannotationschema:hasIntent>
+To model a particular occurrence of an actual computational processing activity (rather than a recipe/template/etc. for how to conduct a computation). We include the word "processing" because we focus specifically on computational activities that process input data to produce output data. Computational activities that do not do this are out of scope.</cpannotationschema:hasIntent>
+</rdf:Description>
+<!--  http://www.w3.org/2002/07/owl#versionInfo  -->
+<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+<owl:versionInfo>v0.1</owl:versionInfo>
+</rdf:Description>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#occursIn 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#occursIn">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#startsAt 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#startsAt">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#endsAt
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#endsAt">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasDocumentation
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasDocumentation">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasInput
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasInput">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasOutput
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasOutput">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasConfiguration
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasConfiguration">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommandLine
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommandLine">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#associatedWith 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#associatedWith">
+    <rdfs:domain>
+        <owl:Class>    
+            <owl:unionOf rdf:parseType="Collection">
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Agent"/>
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+        <owl:Class>    
+            <owl:unionOf rdf:parseType="Collection">
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Agent"/>
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommand
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommand">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Command"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#storedIn
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#storedIn">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasParameter
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasParameter">
+    <rdfs:domain>
+        <owl:Class>    
+            <owl:unionOf rdf:parseType="Collection">
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"/>
+                <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+            </owl:unionOf>
+        </owl:Class>
+    </rdfs:domain>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/Parameter#Parameter"/>
+</owl:ObjectProperty>
+
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Agent-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Agent">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Command"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Command-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Command">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine">
+    <owl:subClassOf>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommand"/>
+            <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+        </owl:Restriction>
+    </owl:subClassOf>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity">
+    <!--TODO 
+    the start time occurs before the stop time
+     -->
+    <owl:subClassOf>
+    <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#occursIn"/>
+            <owl:someValuesFrom rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"/>
+        </owl:Restriction>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasInput"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasOutput"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#startsAt"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#endsAt"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#endsAt"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:intersectionOf>
+    </owl:subClassOf>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+</owl:Class>
+
+</rdf:RDF>

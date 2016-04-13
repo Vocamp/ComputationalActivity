@@ -1,0 +1,168 @@
+<rdf:RDF xmlns="http://dase.cs.wright.edu/ontologies/VersionedEntity#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://dase.cs.wright.edu/ontologies/versionedentity">
+<owl:Ontology rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity">
+<owl:imports rdf:resource="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl"/>
+</owl:Ontology>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+<!--
+ http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent 
+-->
+<rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
+<cpannotationschema:hasIntent>
+To model an entity that has a name, version, checksum and location.</cpannotationschema:hasIntent>
+</rdf:Description>
+<!--  http://www.w3.org/2002/07/owl#versionInfo  -->
+<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+<owl:versionInfo>v0.1</owl:versionInfo>
+</rdf:Description>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#attributedTo
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#attributedTo">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksum
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksum">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksumAlgorithm
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksumAlgorithm">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"/>
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#isChecksumOf
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#isChecksumOf">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+<owl:inverseOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksum"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#hasVersion
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasVersion">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Version"/>
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#hasName
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasName">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#availableAt
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#availableAt">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Location"/>
+</owl:ObjectProperty>
+
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#Version-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#Version">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Location"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity">
+    <owl:equivalentClass>
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#hasVersion"/>
+            <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+        </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Location"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#Location-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#Location">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"/>
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent">
+    <owl:disjointWith rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/VersionedEntity#Name-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/VersionedEntity#Name">
+</owl:Class>
+
+
+</rdf:RDF>

@@ -1,0 +1,244 @@
+<rdf:RDF xmlns="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xml:base="http://dase.cs.wright.edu/ontologies/computationalenvironment">
+<owl:Ontology rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment">
+<owl:imports rdf:resource="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl"/>
+</owl:Ontology>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+<!--
+ http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent 
+-->
+<rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
+<cpannotationschema:hasIntent>
+To model the hardware, operating system, and software present in a computional environment.</cpannotationschema:hasIntent>
+</rdf:Description>
+<!--  http://www.w3.org/2002/07/owl#versionInfo  -->
+<rdf:Description rdf:about="http://www.w3.org/2002/07/owl#versionInfo">
+<owl:versionInfo>v0.1</owl:versionInfo>
+</rdf:Description>
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OSShellEnvironment"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Architecture"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores 
+-->
+<owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
+<rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+</owl:DatatypeProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize 
+-->
+<owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize">
+<rdfs:domain>
+    <owl:Class>    
+        <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#HardDisk"/>
+        </owl:unionOf>
+    </owl:Class>
+</rdfs:domain>
+<rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#float"/>
+</owl:DatatypeProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit 
+-->
+<owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit">
+<rdfs:domain>
+    <owl:Class>    
+        <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#DiskSpace"/>
+        </owl:unionOf>
+    </owl:Class>
+</rdfs:domain>
+<rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#float"/>
+</owl:DatatypeProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODeviceType"/>
+</owl:ObjectProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable 
+-->
+<owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable">
+<rdfs:domain>
+    <owl:Class>    
+        <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice"/>
+            <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"/>
+        </owl:unionOf>
+    </owl:Class>
+</rdfs:domain>
+<rdfs:range rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress 
+-->
+<owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress">
+<rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"/>
+<rdfs:range rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#VirtualMACAddress"/>
+</owl:ObjectProperty>
+
+
+
+<!--
+ 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     
+-->
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnviornment">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#HardDisk-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#HardDisk">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OSEnvironment-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OSEnvironment">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Architecture-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Architecture">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODeviceType-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODeviceType">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#VirtualMACAddress-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#VirtualMACAddress">
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"/>
+</owl:Class>
+
+<!--
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable-->
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable">
+    <owl:subClassOf rdf:resource="http://dase.cs.wright.edu/ontologies/Parameter#Parameter"/>
+</owl:Class>
+
+</rdf:RDF>
