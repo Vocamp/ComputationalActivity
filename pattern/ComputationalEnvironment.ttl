@@ -1,0 +1,148 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dase.cs.wright.edu/ontologies/ComputationalEnvironment>
+    a owl:Ontology ;
+    owl:imports <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl> .
+
+:Architecture
+    a owl:Class .
+
+:ComputationalEnviornment
+    a owl:Class .
+
+:DiskSpace
+    a owl:Class .
+
+:Distribution
+    a owl:Class ;
+    owl:subClassOf <http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity> .
+
+:EnvironmentVariable
+    a owl:Class ;
+    owl:subClassOf <http://dase.cs.wright.edu/ontologies/Parameter#Parameter> .
+
+:HardDisk
+    a owl:Class ;
+    owl:subClassOf :Hardware .
+
+:Hardware
+    a owl:Class .
+
+:IODevice
+    a owl:Class ;
+    owl:subClassOf :Hardware .
+
+:IODeviceType
+    a owl:Class .
+
+:Kernel
+    a owl:Class ;
+    owl:subClassOf <http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity> .
+
+:Memory
+    a owl:Class ;
+    owl:subClassOf :Hardware .
+
+:NetworkInterface
+    a owl:Class ;
+    owl:subClassOf :Hardware .
+
+:OSEnvironment
+    a owl:Class .
+
+:OperatingSystem
+    a owl:Class .
+
+:Processor
+    a owl:Class ;
+    owl:subClassOf :Hardware .
+
+:Software
+    a owl:Class ;
+    owl:subClassOf <http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity> .
+
+:VirtualMACAddress
+    a owl:Class .
+
+:hasArchitecture
+    a owl:ObjectProperty ;
+    rdfs:domain :Processor ;
+    rdfs:range :Architecture .
+
+:hasHardware
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalEnvironment ;
+    rdfs:range :Hardware .
+
+:hasIODeviceType
+    a owl:ObjectProperty ;
+    rdfs:domain :IODevice ;
+    rdfs:range :IODeviceType .
+
+:hasNumberOfCores
+    a owl:DatatypeProperty ;
+    rdfs:domain :Processor ;
+    rdfs:range ""^^xsd:nonNegativeInteger .
+
+:hasOSShellEnvironment
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalEnvironment ;
+    rdfs:range :OSShellEnvironment .
+
+:hasOperatingSystem
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalEnvironment ;
+    rdfs:range :OperatingSystem .
+
+:hasSize
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Memory
+            :HardDisk
+        )
+    ] ;
+    rdfs:range ""^^xsd:float .
+
+:hasSoftware
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalEnvironment ;
+    rdfs:range :Software .
+
+:hasUnit
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Memory
+            :DiskSpace
+        )
+    ] ;
+    rdfs:range ""^^xsd:float .
+
+:hasVirtualMACAddress
+    a owl:ObjectProperty ;
+    rdfs:domain :NetworkInterface ;
+    rdfs:range :VirtualMACAddress .
+
+:isAvailable
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:IODevice
+            :NetworkInterface
+        )
+    ] ;
+    rdfs:range ""^^xsd:boolean .
+
+cpannotationschema:hasIntent
+    cpannotationschema:hasIntent """
+To model the hardware, operating system, and software present in a computional environment.""" .
+
+owl:versionInfo
+    owl:versionInfo "v0.1" .
+

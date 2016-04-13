@@ -1,0 +1,86 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://dase.cs.wright.edu/ontologies/VersionedEntity#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dase.cs.wright.edu/ontologies/VersionedEntity>
+    a owl:Ontology ;
+    owl:imports <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl> .
+
+:Agent
+    a owl:Class ;
+    owl:disjointWith :Name .
+
+:Checksum
+    a owl:Class ;
+    owl:disjointWith :Agent, :ChecksumAlgorithm, :Name .
+
+:ChecksumAlgorithm
+    a owl:Class ;
+    owl:disjointWith :Agent, :Name .
+
+:Location
+    a owl:Class ;
+    owl:disjointWith :Agent, :Checksum, :ChecksumAlgorithm, :Name .
+
+:Name
+    a owl:Class .
+
+:Version
+    a owl:Class ;
+    owl:disjointWith :Agent, :Checksum, :ChecksumAlgorithm, :Location, :Name, :VersionedEntity .
+
+:VersionedEntity
+    a owl:Class ;
+    owl:disjointWith :Agent, :Checksum, :ChecksumAlgorithm, :Location, :Name ;
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasVersion
+    ] .
+
+:attributedTo
+    a owl:ObjectProperty ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range :Agent .
+
+:availableAt
+    a owl:ObjectProperty ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range :Location .
+
+:hasChecksum
+    a owl:ObjectProperty ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range :Checksum .
+
+:hasChecksumAlgorithm
+    a owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:domain :Checksum ;
+    rdfs:range :ChecksumAlgorithm .
+
+:hasName
+    a owl:ObjectProperty ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range :Name .
+
+:hasVersion
+    a owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range :Version .
+
+:isChecksumOf
+    a owl:FunctionalProperty, owl:ObjectProperty ;
+    rdfs:domain :Checksum ;
+    rdfs:range :VersionedEntity ;
+    owl:inverseOf :hasChecksum .
+
+cpannotationschema:hasIntent
+    cpannotationschema:hasIntent """
+To model an entity that has a name, version, checksum and location.""" .
+
+owl:versionInfo
+    owl:versionInfo "v0.1" .
+

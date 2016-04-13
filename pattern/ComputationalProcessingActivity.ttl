@@ -1,0 +1,123 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity>
+    a owl:Ontology ;
+    owl:imports <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl> .
+
+:Agent
+    a owl:Class ;
+    owl:disjointWith :Command, :CommandLine, :ComputationalEnvironment, :ComputationalProcessingActivity, :ConfigFile, :Configuration, :DataFile, :Document .
+
+:Command
+    a owl:Class ;
+    owl:disjointWith :CommandLine, :ComputationalEnvironment, :ComputationalProcessingActivity, :ConfigFile, :Configuration, :DataFile, :Document .
+
+:CommandLine
+    a owl:Class ;
+    owl:disjointWith :ComputationalEnvironment, :ComputationalProcessingActivity, :ConfigFile, :Configuration, :DataFile, :Document ;
+    owl:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty :hasCommand
+    ] .
+
+:ComputationalEnvironment
+    a owl:Class ;
+    owl:disjointWith :ComputationalProcessingActivity, :ConfigFile, :Configuration, :DataFile, :Document .
+
+:ComputationalProcessingActivity
+    a owl:Class .
+
+:Configuration
+    a owl:Class .
+
+:associatedWith
+    a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Agent
+            :ComputationalProcessingActivity
+        )
+    ] ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:Agent
+            :ComputationalProcessingActivity
+        )
+    ] .
+
+:endsAt
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range <http://www.w3.org/2006/time#Instant> .
+
+:hasCommand
+    a owl:ObjectProperty ;
+    rdfs:domain :CommandLine ;
+    rdfs:range :Command .
+
+:hasCommandLine
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :CommandLine .
+
+:hasConfiguration
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :ConfigFile .
+
+:hasDocumentation
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :Document .
+
+:hasInput
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :DataFile .
+
+:hasOutput
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :DataFile .
+
+:hasParameter
+    a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:CommandLine
+            :Configuration
+        )
+    ] ;
+    rdfs:range <http://dase.cs.wright.edu/ontologies/Parameter#Parameter> .
+
+:occursIn
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range :ComputationalEnvironment .
+
+:startsAt
+    a owl:ObjectProperty ;
+    rdfs:domain :ComputationalProcessingActivity ;
+    rdfs:range <http://www.w3.org/2006/time#Instant> .
+
+:storedIn
+    a owl:ObjectProperty ;
+    rdfs:domain :Configuration ;
+    rdfs:range :ConfigFile .
+
+cpannotationschema:hasIntent
+    cpannotationschema:hasIntent """
+To model a particular occurrence of an actual computational processing activity (rather than a recipe/template/etc. for how to conduct a computation). We include the word \"processing\" because we focus specifically on computational activities that process input data to produce output data. Computational activities that do not do this are out of scope.""" .
+
+owl:versionInfo
+    owl:versionInfo "v0.1" .
+
+[]
+    a owl:intersectionOf .
+
