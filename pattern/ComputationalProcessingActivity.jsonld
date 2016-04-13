@@ -1,0 +1,106 @@
+{
+  "@context" : {
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "ComputationalEnvironment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalEnvironment"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "hasOutput" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasOutput",
+      "@type" : "@id"
+    },
+    "intersectionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#intersectionOf"
+    },
+    "Instant" : {
+      "@id" : "http://www.w3.org/2006/time#Instant"
+    },
+    "CommandLine" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#CommandLine"
+    },
+    "occursIn" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#occursIn",
+      "@type" : "@id"
+    },
+    "hasCommand" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommand",
+      "@type" : "@id"
+    },
+    "someValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom"
+    },
+    "startsAt" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#startsAt",
+      "@type" : "@id"
+    },
+    "associatedWith" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#associatedWith",
+      "@type" : "@id"
+    },
+    "Agent" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Agent"
+    },
+    "hasInput" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasInput",
+      "@type" : "@id"
+    },
+    "Error1" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error1"
+    },
+    "hasCommandLine" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasCommandLine",
+      "@type" : "@id"
+    },
+    "Parameter" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/Parameter#Parameter"
+    },
+    "hasConfiguration" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasConfiguration",
+      "@type" : "@id"
+    },
+    "Command" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Command"
+    },
+    "storedIn" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#storedIn",
+      "@type" : "@id"
+    },
+    "DataFile" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#DataFile"
+    },
+    "endsAt" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#endsAt",
+      "@type" : "@id"
+    },
+    "hasParameter" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasParameter",
+      "@type" : "@id"
+    },
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty"
+    },
+    "hasIntent" : {
+      "@id" : "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"
+    },
+    "hasDocumentation" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#hasDocumentation",
+      "@type" : "@id"
+    },
+    "Document" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Document"
+    },
+    "Configuration" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#Configuration"
+    },
+    "ComputationalProcessingActivity" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ComputationalProcessingActivity"
+    },
+    "ConfigFile" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalProcessingActivity#ConfigFile"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "@context" : {
+    "isChecksumOf" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#isChecksumOf",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "ChecksumAlgorithm" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#ChecksumAlgorithm"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "hasName" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#hasName",
+      "@type" : "@id"
+    },
+    "availableAt" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#availableAt",
+      "@type" : "@id"
+    },
+    "hasVersion" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#hasVersion",
+      "@type" : "@id"
+    },
+    "hasChecksumAlgorithm" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksumAlgorithm",
+      "@type" : "@id"
+    },
+    "Location" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#Location"
+    },
+    "Checksum" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#Checksum"
+    },
+    "Agent" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#Agent"
+    },
+    "VersionedEntity" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#VersionedEntity"
+    },
+    "hasIntent" : {
+      "@id" : "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"
+    },
+    "Version" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#Version"
+    },
+    "Name" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#Name"
+    },
+    "hasChecksum" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#hasChecksum",
+      "@type" : "@id"
+    },
+    "attributedTo" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/VersionedEntity#attributedTo",
+      "@type" : "@id"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "@context" : {
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "Software" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Software"
+    },
+    "ComputationalEnvironment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"
+    },
+    "ComputationalEnviornment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnviornment"
+    },
+    "HardDisk" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#HardDisk"
+    },
+    "Distribution" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Distribution"
+    },
+    "VirtualMACAddress" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#VirtualMACAddress"
+    },
+    "Hardware" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Hardware"
+    },
+    "hasVirtualMACAddress" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress",
+      "@type" : "@id"
+    },
+    "hasNumberOfCores" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores"
+    },
+    "hasSoftware" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware",
+      "@type" : "@id"
+    },
+    "IODeviceType" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODeviceType"
+    },
+    "hasSize" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize"
+    },
+    "hasOSShellEnvironment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment",
+      "@type" : "@id"
+    },
+    "EnvironmentVariable" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#EnvironmentVariable"
+    },
+    "hasIODeviceType" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType",
+      "@type" : "@id"
+    },
+    "NetworkInterface" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"
+    },
+    "Processor" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"
+    },
+    "Memory" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"
+    },
+    "Architecture" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Architecture"
+    },
+    "hasUnit" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit"
+    },
+    "isAvailable" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable"
+    },
+    "IODevice" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice"
+    },
+    "hasIntent" : {
+      "@id" : "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent"
+    },
+    "OSShellEnvironment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OSShellEnvironment"
+    },
+    "DiskSpace" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#DiskSpace"
+    },
+    "Kernel" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Kernel"
+    },
+    "OSEnvironment" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OSEnvironment"
+    },
+    "hasHardware" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware",
+      "@type" : "@id"
+    },
+    "hasOperatingSystem" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem",
+      "@type" : "@id"
+    },
+    "hasArchitecture" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture",
+      "@type" : "@id"
+    },
+    "OperatingSystem" : {
+      "@id" : "http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#OperatingSystem"
+    }
+  }
+}
