@@ -3,16 +3,16 @@
 <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl"/>
 </owl:Ontology>
 <!--
- 
+
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     
+
 -->
 <!--
- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent 
+ http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent
 -->
 <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
 <cpannotationschema:hasIntent>
@@ -23,17 +23,17 @@ To model the hardware, operating system, and software present in a computional e
 <owl:versionInfo>v0.1</owl:versionInfo>
 </rdf:Description>
 <!--
- 
+
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     
+
 -->
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasHardware">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
@@ -41,7 +41,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOperatingSystem">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
@@ -49,7 +49,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasOSShellEnvironment">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
@@ -57,7 +57,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSoftware">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment"/>
@@ -65,7 +65,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasArchitecture">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
@@ -73,7 +73,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores
 -->
 <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasNumberOfCores">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Processor"/>
@@ -81,11 +81,11 @@ To model the hardware, operating system, and software present in a computional e
 </owl:DatatypeProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize
 -->
 <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasSize">
 <rdfs:domain>
-    <owl:Class>    
+    <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#HardDisk"/>
@@ -96,11 +96,11 @@ To model the hardware, operating system, and software present in a computional e
 </owl:DatatypeProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit
 -->
 <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasUnit">
 <rdfs:domain>
-    <owl:Class>    
+    <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#Memory"/>
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#DiskSpace"/>
@@ -111,7 +111,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:DatatypeProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasIODeviceType">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice"/>
@@ -119,11 +119,11 @@ To model the hardware, operating system, and software present in a computional e
 </owl:ObjectProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable
 -->
 <owl:DatatypeProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#isAvailable">
 <rdfs:domain>
-    <owl:Class>    
+    <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#IODevice"/>
             <owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"/>
@@ -134,7 +134,7 @@ To model the hardware, operating system, and software present in a computional e
 </owl:DatatypeProperty>
 
 <!--
- http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress 
+ http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress
 -->
 <owl:ObjectProperty rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#hasVirtualMACAddress">
 <rdfs:domain rdf:resource="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#NetworkInterface"/>
@@ -144,17 +144,17 @@ To model the hardware, operating system, and software present in a computional e
 
 
 <!--
- 
+
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     
+
 -->
 <!--
  http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment-->
-<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnviornment">
+<owl:Class rdf:about="http://dase.cs.wright.edu/ontologies/ComputationalEnvironment#ComputationalEnvironment">
 </owl:Class>
 
 <!--
